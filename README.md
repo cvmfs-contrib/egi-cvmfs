@@ -9,4 +9,5 @@ cvmfs, cvmfs-config-egi, and cvmfs-x509-helper from
 [EGI UMD](http://repository.egi.eu/category/umd_releases/distribution/umd-4/)
 and install egi-cvmfs (which requires the other three packages) from 
 [cvmfs-contrib-egi](https://build.opensuse.org/repositories/home:cvmfs:contrib-egi)
-(click the down arrow under desired release).
+(click the down arrow under desired release and find rpm in noarch
+directory).
