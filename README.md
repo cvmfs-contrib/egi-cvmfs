@@ -24,7 +24,9 @@ addition, the egi-cvmfs rpm itself is currently only in the community
 cvmfs-contrib-egi repository.  A future release of EGI UMD will have
 egi-cvmfs, but for now both options need to use cvmfs-contrib.
 
-For Debian/Ubuntu hosts, use CERN cvmfs and cvmfs-contrib.
+For Debian/Ubuntu hosts, use CERN cvmfs and cvmfs-contrib.  This
+egi-cvmfs meta package is not available there, but the installation
+instructions are still on this page.
 
 ### EGI UMD repository setup
 
@@ -63,7 +65,7 @@ yum install egi-cvmfs
 ```
 or on Debian/Ubuntu hosts do
 ```
-apt-get install egi-cvmfs
+apt-get install cvmfs-config-egi cvmfs cvmfs-x509-helper
 ```
 
 Then follow the 
