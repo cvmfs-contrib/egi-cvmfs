@@ -9,22 +9,39 @@ and all of cvmfs are below.
 
 EGI cvmfs installation is very similar to the Open Science Grid
 ([OSG](https://opensciencegrid.org)) installation, so rather than
-repeating all their
-[cvmfs installation instructions](https://opensciencegrid.org/docs/worker-node/install-cvmfs/),
+repeating all their instructions,
 all that is shown here is the differences between the EGI and OSG
 installations.  The only differences are in the package repository setup
 and the install command.
 
+## Preparation
+
+First, read the introduction and follow the "Before Starting" section in the
+[OSG cvmfs installation instructions](https://opensciencegrid.org/docs/worker-node/install-cvmfs), except for the last step to "Prepare the required
+Yum repositories."
+
+If your host already has a CERN cvmfs installation on it, on a Red Hat
+Enterprise Linux (RHEL) based host do this as root:
+```
+rpm -e --nodeps cvmfs-config-default
+```
+or on a Debian or Ubuntu host do:
+```
+dpkg -r --force-depends cvmfs-config-default
+```
+During the time there is no cvmfs-config-* package installed, mounted
+cvmfs repositories should continue to work but other repositories will
+not be able to be mounted.
+
 ## Package repository setup
 
-For Red Hat Enterprise Linux (RHEL) based hosts, instead of the OSG yum
-repositories, you have a choice between using the standard EGI UMD yum
+For RHEL based hosts, you have a choice between using the standard EGI UMD yum
 repository and the CERN cvmfs yum repositories for the cvmfs rpms.  In
 addition, the egi-cvmfs rpm itself is currently only in the community
-cvmfs-contrib-egi repository.  A future release of EGI UMD will have
+supported cvmfs-contrib-egi repository.  A future release of EGI UMD will have
 egi-cvmfs, but for now both options need to use cvmfs-contrib.
 
-For Debian/Ubuntu hosts, use CERN cvmfs and cvmfs-contrib.  This
+For Debian or Ubuntu hosts, use CERN cvmfs and cvmfs-contrib.  The
 egi-cvmfs meta package is not available there, but the installation
 instructions are still on this page.
 
@@ -68,7 +85,6 @@ or on Debian/Ubuntu hosts do
 apt-get install cvmfs-config-egi cvmfs cvmfs-x509-helper
 ```
 
-Then follow the 
-[OSG cvmfs installation instructions](https://opensciencegrid.org/docs/worker-node/install-cvmfs/)
-except for "Prepare the Yum repositories" and "Installing CVMFS."
+Then follow the remainder of the OSG cvmfs instructions starting at 
+[Automount setup](https://opensciencegrid.org/docs/worker-node/install-cvmfs/#automount-setup).
 On Debian/Ubuntu hosts follow the EL7 instructions for "Automount setup."
