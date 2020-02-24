@@ -39,7 +39,7 @@ rpm -e --nodeps cvmfs-config-default
 ```
 or on a Debian or Ubuntu host do:
 ```
-dpkg -r --force-depends cvmfs-config-default
+dpkg -P --force-depends cvmfs-config-default
 ```
 During the time there is no cvmfs-config-* package installed, mounted
 cvmfs repositories should continue to work but other repositories will
