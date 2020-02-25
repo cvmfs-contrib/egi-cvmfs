@@ -64,7 +64,9 @@ egi-cvmfs, but for now both choices need to also use cvmfs-contrib.
 If you choose to use the EGI UMD repository for RHEL hosts, set it up
 by installing the appropriate umd-release rpm shown in the
 [UMD-4](http://repository.egi.eu/category/umd_releases/distribution/umd-4/)
-documentation.
+documentation.  Temporarily until UMD upgrades, if you already have a
+cvmfs version installed newer than 2.6.3 then first downgrade to it with
+`yum downgrade cvmfs-2.6.3`.
 
 If you're not using EGI UMD, then follow the yum instructions at the top of the
 [CERN cvmfs downloads page](https://cernvm.cern.ch/portal/filesystem/downloads).
