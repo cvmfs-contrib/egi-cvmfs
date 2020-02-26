@@ -32,19 +32,6 @@ Before starting the installation process, consider the following:
 * **Disk space:** Sufficient (~25GB) cache space reserved, preferably
   in a separate filesystem.
 
-If your host already has a CERN cvmfs installation on it, on a Red Hat
-Enterprise Linux (RHEL) based host do this as root:
-```
-rpm -e --nodeps cvmfs-config-default
-```
-or on a Debian or Ubuntu host do:
-```
-dpkg -P --force-depends cvmfs-config-default
-```
-During the time there is no cvmfs-config-* package installed, mounted
-cvmfs repositories should continue to work but other repositories will
-not be able to be mounted.
-
 ## Package repository setup
 
 If you are using a Debian or Ubuntu host then follow the instructions for
