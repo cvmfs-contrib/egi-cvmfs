@@ -43,34 +43,33 @@ package isn't on Debian, but the instructions are here so skip ahead to the
 [installing section below](#installing).
 
 For RHEL based hosts, you have a choice between using the standard EGI UMD yum
-repository and the CERN cvmfs yum repositories for the cvmfs rpms.  In
-addition, the egi-cvmfs rpm itself is currently only in the community
-supported cvmfs-contrib-egi repository.  A future release of EGI UMD will have
-egi-cvmfs, but for now both choices need to also use cvmfs-contrib.
+repository and the CERN cvmfs plus cvmfs-contrib yum repositories:
 
-If you choose to use the EGI UMD repository for RHEL hosts, set it up
-by installing the appropriate umd-release rpm shown in the
-[UMD-4](http://repository.egi.eu/category/umd_releases/distribution/umd-4/)
-documentation.  Temporarily until UMD upgrades, if you already have a
-cvmfs version installed newer than 2.6.3 then first downgrade to it with
-`yum downgrade cvmfs-2.6.3`.
+1.  If you choose to use the EGI UMD repository for RHEL hosts, set it up
+    by installing the appropriate umd-release rpm shown in the
+    [UMD-4](http://repository.egi.eu/category/umd_releases/distribution/umd-4/)
+    documentation.
 
-If you're not using EGI UMD, then follow the yum instructions at the top of the
-[CERN cvmfs downloads page](https://cernvm.cern.ch/portal/filesystem/downloads).
+2.  If you're not using EGI UMD, first follow the yum instructions at the
+    top of the [CERN cvmfs downloads
+    page](https://cernvm.cern.ch/portal/filesystem/downloads).  Next,
+    the cvmfs-contrib setup needed for the EGI cvmfs installation on
+    RHEL is a little more complicated than a standard cvmfs-contrib
+    setup because unlike on Debian there can only be one cvmfs-config-*
+    rpm in each yum repository.  Run these commands as root to set up
+    both the cvmfs-contrib repository and the additional
+    cvmfs-contrib-egi yum repository:
 
-The cvmfs-contrib setup needed for the EGI cvmfs installation on RHEL is
-a little more complicated than a standard cvmfs-contrib setup because
-unlike on Debian there can only be one cvmfs-config-* rpm in each yum
-repository.  Run these commands as root to set up both the cvmfs-contrib
-repository and the additional cvmfs-contrib-egi yum repository:
-```
-yum install -y https://ecsft.cern.ch/dist/cvmfs/cvmfs-contrib-release/cvmfs-contrib-release-latest.noarch.rpm
-cp /etc/yum.repos.d/cvmfs-contrib.repo /tmp
-mv -f /tmp/cvmfs-contrib.repo /etc/yum.repos.d
-yum-config-manager --enable cvmfs-contrib-egi >/dev/null
-```
-The `cp` and `mv` cause a copy of the file to be made instead of a
-symlink to a file that's not supposed to be changed.
+
+    ```
+    yum install -y https://ecsft.cern.ch/dist/cvmfs/cvmfs-contrib-release/cvmfs-contrib-release-latest.noarch.rpm
+    cp /etc/yum.repos.d/cvmfs-contrib.repo /tmp
+    mv -f /tmp/cvmfs-contrib.repo /etc/yum.repos.d
+    yum-config-manager --enable cvmfs-contrib-egi >/dev/null
+    ```
+
+    The `cp` and `mv` cause a copy of the file to be made instead of a
+    symlink to a file that's not supposed to be changed.
 
 ## <a name="installing"></a>Installing EGI cvmfs
 
