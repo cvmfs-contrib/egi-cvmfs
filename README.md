@@ -1,7 +1,7 @@
 # egi-cvmfs
 egi-cvmfs is a meta-package to install the CernVM File System
-([cvmfs](https://cernvm.cern.ch/portal/filesystem)) configured for
-[EGI](https://www.egi.eu).
+([cvmfs](https://cvmfs.readthedocs.io/en/stable/cpt-overview.html))
+configured for [EGI](https://www.egi.eu).
 
 This github repository has the source code of course but it is also
 available as a pre-built package, and instructions on how to install it
@@ -85,3 +85,6 @@ apt-get install cvmfs-config-egi cvmfs cvmfs-x509-helper
 Then proceed to follow the OSG cvmfs instructions starting at 
 [Automount setup](https://opensciencegrid.org/docs/worker-node/install-cvmfs/#automount-setup).
 On Debian/Ubuntu hosts follow the EL7 instructions for "Automount setup."
+
+These instructions should work even if you are replacing a previous
+CVMFS installation based on cvmfs-config-default.
