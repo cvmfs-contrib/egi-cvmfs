@@ -73,7 +73,7 @@ repository and the CERN cvmfs plus cvmfs-contrib yum repositories:
 
 ## <a name="installing"></a>Installing EGI cvmfs
 
-To install EGI cvmfs on RHEL hosts do:
+To install EGI cvmfs on RHEL hosts do
 ```
 yum install egi-cvmfs
 ```
