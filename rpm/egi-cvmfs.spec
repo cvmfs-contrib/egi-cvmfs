@@ -2,13 +2,13 @@ Summary: EGI metapackage for OASIS and CVMFS
 Name: egi-cvmfs
 Version: 2
 # The release_prefix macro is used in the OBS prjconf, don't change its name
-%define release_prefix 3
+%define release_prefix 4
 Release: %{release_prefix}%{?dist}
 License: ASL 2.0
 BuildArch: noarch
 # Note: cannot require an exact release number (after a dash) unless 
 #   including the dist as well, e.g. -2%{?dist}
-Requires: cvmfs = 2.7.1
+Requires: cvmfs = 2.7.2
 Requires: cvmfs-config-egi = 2.4
 Requires: cvmfs-x509-helper >= 1.2
 
@@ -27,6 +27,9 @@ exit 0
 %files
 
 %changelog
+* Mon Apr 27 2020 Dave Dykstra <dwd@fnal.gov> 2-4
+- Update to cvmfs-2.7.2.
+
 * Fri Mar 27 2020 Dave Dykstra <dwd@fnal.gov> 2-3
 - Undo the last change, since mutual Obsoletes doesn't work.  Instead
   cvmfs-config-{egi|osg} are made to conflict, which will also prevent
