@@ -87,4 +87,9 @@ Then proceed to follow the OSG cvmfs instructions starting at
 On Debian/Ubuntu hosts follow the EL7 instructions for "Automount setup."
 
 These instructions should work even if you are replacing a previous
-CVMFS installation based on cvmfs-config-default.
+CVMFS installation based on cvmfs-config-default.  On Debian/Ubuntu, if
+you did replace cvmfs-config-default then also clean up deleted files
+with
+```
+dpkg --purge cvmfs-config-default
+```
