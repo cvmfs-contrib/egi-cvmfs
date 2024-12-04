@@ -47,7 +47,7 @@ repository and the CERN cvmfs plus cvmfs-contrib yum repositories:
 
 1.  If you choose to use the EGI UMD repository for RHEL hosts, set it up
     by installing the appropriate umd-release rpm shown in the
-    [UMD](https://repository.egi.eu/UMD/index.html) documentation.
+    [UMD](https://repository.egi.eu/umd/index.html) documentation.
 
 2.  If you're not using EGI UMD, first follow the yum instructions at the
     top of the [CERN cvmfs downloads
