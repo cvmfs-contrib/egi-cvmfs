@@ -1,15 +1,18 @@
 Summary: EGI metapackage for CVMFS
 Name: egi-cvmfs
-Version: 6
+Version: 7
 # The release_prefix macro is used in the OBS prjconf, don't change its name
-%define release_prefix 8
+%define release_prefix 1
 Release: %{release_prefix}%{?dist}
 License: ASL 2.0
 BuildArch: noarch
+# The required cvmfs version has to be an "=", not ">=", so if someone
+#   does `dnf upgrade cvmfs` they will also get an upgraded egi-cvmfs
+#   and most importantly any other updated dependencies.
 # Note: cannot require an exact release number (after a dash) unless 
 #   including the dist as well, e.g. -2%{?dist}
-Requires: cvmfs = 2.11.5
-Requires: cvmfs-config-egi = 2.7
+Requires: cvmfs = 2.12.4
+Requires: cvmfs-config-egi >= 2.7
 Requires: cvmfs-x509-helper >= 2.4
 
 %description
@@ -27,6 +30,9 @@ exit 0
 %files
 
 %changelog
+* Tue Jan 14 2025 Dave Dykstra <dwd@fnal.gov> 7-1
+- Update to cvmfs-2.12.4 and change the cvmfs-config-egi requires to >=.
+
 * Tue Sep 24 2024 Dave Dykstra <dwd@fnal.gov> 6-8
 - Update to cvmfs-config-egi-2.7
 
