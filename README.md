@@ -51,7 +51,7 @@ repository and the CERN cvmfs plus cvmfs-contrib yum repositories:
 
 2.  If you're not using EGI UMD, first follow the yum instructions at the
     top of the [CERN cvmfs downloads
-    page](https://cernvm.cern.ch/portal/filesystem/downloads).  Next,
+    page](https://cernvm.cern.ch/fs/).  Next,
     the cvmfs-contrib setup needed for the EGI cvmfs installation on
     RHEL is a little more complicated than a standard cvmfs-contrib
     setup because unlike on Debian there can only be one cvmfs-config-*
